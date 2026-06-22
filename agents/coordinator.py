@@ -3,16 +3,18 @@ from agents.task_agent import prioritize_tasks
 from agents.report_agent import generate_report
 
 
-def handle_request(email_text):
-    email_result = summarize_email(email_text)
+def process_email_workflow(email_text):
 
-    task_result = prioritize_tasks(
-        email_result["action_items"]
-    )
+    print("Step 1: Summarizing email...")
 
-    report = generate_report(
-        email_result["summary"],
-        task_result
-    )
+    summary = summarize_email(email_text)
+
+    print("Step 2: Prioritizing tasks...")
+
+    priorities = prioritize_tasks(summary)
+
+    print("Step 3: Generating report...")
+
+    report = generate_report(summary, priorities)
 
     return report
