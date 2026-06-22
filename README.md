@@ -1,29 +1,24 @@
 # Business Operations Multi-Agent Copilot
 
-## Problem
+## Kaggle AI Agents Capstone Project
 
-Businesses spend hours processing emails,
-tracking tasks and preparing reports.
+Track: Agents for Business
 
-## Solution
+### Problem
+
+Small businesses spend too much time managing emails, tasks, and reports.
+
+### Solution
 
 A multi-agent AI system that:
-
 - Summarizes emails
-- Extracts actions
-- Prioritizes work
+- Extracts action items
+- Prioritizes tasks
 - Generates reports
 
-## Planned Features
+### Technologies
 
-- Coordinator Agent
-- Email Agent
-- Task Agent
-- Report Agent
-- MCP Integration
-- Security Controls
-- Streamlit UI
-
-## Competition
-
-AI Agents: Intensive Vibe Coding Capstone Project
+- Google ADK
+- MCP
+- Streamlit
+- Python
