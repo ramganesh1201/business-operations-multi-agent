@@ -1,5 +1,10 @@
 from agents.coordinator import handle_request
 
-query = input("What would you like me to do? ")
+sample_email = """
+Client needs project update by Friday.
+Prepare status report and schedule meeting.
+"""
 
-handle_request(query)
+result = handle_request(sample_email)
+
+print(result)
