@@ -1,20 +1,12 @@
 from agents.coordinator import process_email_workflow
 
 email = """
-Hello Team,
-
-The client requires the dashboard update by Friday.
-
-Please:
-- Prepare a progress report
-- Schedule a review meeting
-- Resolve critical bugs
-
-Regards,
-Manager
+Client requires dashboard update by Friday.
+Fix bugs and schedule review.
 """
 
-result = process_email_workflow(email)
+report, filepath = process_email_workflow(email)
 
-print("\nFINAL REPORT\n")
-print(result)
+print(report)
+
+print(f"\nSaved to: {filepath}")
