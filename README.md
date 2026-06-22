@@ -1,27 +1,13 @@
 # Business Operations Multi-Agent Copilot
 
-## Kaggle AI Agents Capstone Project
+## Overview
 
-Track: Agents for Business
+A multi-agent AI system that automates:
 
-### Problem
-
-Small businesses spend too much time managing emails, tasks, and reports.
-
-### Solution
-
-A multi-agent AI system that:
-- Summarizes emails
-- Extracts action items
-- Prioritizes tasks
-- Generates reports
-
-### Technologies
-
-- Google ADK
-- MCP
-- Streamlit
-- Python
+- Email analysis
+- Task extraction
+- Task prioritization
+- Report generation
 
 ## Architecture
 
@@ -35,13 +21,46 @@ Task Agent
  ↓
 Report Agent
  ↓
-File Tools
+MCP File Server
 
 ## Features
 
-- Email Summarization
-- Task Prioritization
-- Report Generation
-- Report Storage
+- Gemini 2.5 Flash
 - Multi-Agent Workflow
-- Gemini AI Integration
+- MCP Integration
+- Streamlit UI
+- Role-Based Security
+- Report Persistence
+
+## Run
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## Architecture
+
+The system uses a multi-agent workflow powered by Gemini AI.
+
+![System Architecture](diagrams/system_architecture.png)
+
+### Workflow
+
+1. User submits business email
+2. Coordinator Agent manages workflow
+3. Email Agent extracts information
+4. Task Agent prioritizes work
+5. Report Agent generates report
+6. File Tools save reports
+7. MCP Server exposes report access tools
+
+## Screenshots
+
+### Home Screen
+
+![Home Screen](screenshots/ui_home.png)
+
+### Generated Report
+
+![Generated Report](screenshots/report_output.png)
