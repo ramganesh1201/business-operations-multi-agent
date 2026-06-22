@@ -22,3 +22,26 @@ A multi-agent AI system that:
 - MCP
 - Streamlit
 - Python
+
+## Architecture
+
+User
+ ↓
+Coordinator Agent
+ ↓
+Email Agent
+ ↓
+Task Agent
+ ↓
+Report Agent
+ ↓
+File Tools
+
+## Features
+
+- Email Summarization
+- Task Prioritization
+- Report Generation
+- Report Storage
+- Multi-Agent Workflow
+- Gemini AI Integration
