@@ -1,17 +1,21 @@
 from google import genai
+import json
 from config import GOOGLE_API_KEY
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
-
 def summarize_email(email_text):
-    prompt = f"""
-    Analyze the following email.
 
-    Return:
-    1. Summary
-    2. Action Items
-    3. Deadlines
+    prompt = f"""
+    Analyze the email and return ONLY valid JSON.
+
+    Format:
+
+    {{
+      "summary": "...",
+      "action_items": ["...", "..."],
+      "deadlines": ["..."]
+    }}
 
     Email:
     {email_text}
@@ -22,4 +26,9 @@ def summarize_email(email_text):
         contents=prompt
     )
 
-    return response.text
+    text = response.text.strip()
+
+    text = text.replace("```json", "")
+    text = text.replace("```", "")
+
+    return json.loads(text)

@@ -7,11 +7,16 @@ from tools.file_tools import save_report
 
 def process_email_workflow(email_text):
 
-    summary = summarize_email(email_text)
+    email_data = summarize_email(email_text)
 
-    priorities = prioritize_tasks(summary)
+    priorities = prioritize_tasks(
+        email_data["action_items"]
+    )
 
-    report = generate_report(summary, priorities)
+    report = generate_report(
+        email_data["summary"],
+        priorities
+    )
 
     filepath = save_report(
         report,
