@@ -2,58 +2,66 @@
 
 ## Overview
 
-A multi-agent AI system that automates:
+Business Operations Multi-Agent Copilot is an AI-powered system that automates business email processing, task prioritization, and report generation using a multi-agent architecture powered by Gemini AI.
 
-- Email analysis
-- Task extraction
-- Task prioritization
-- Report generation
+The system helps teams reduce manual effort by automatically extracting action items, identifying deadlines, prioritizing work, and generating professional business reports.
 
-## Architecture
+---
 
-User
- ↓
-Coordinator Agent
- ↓
-Email Agent
- ↓
-Task Agent
- ↓
-Report Agent
- ↓
-MCP File Server
+## Problem Statement
 
-## Features
+Business teams spend significant time:
 
-- Gemini 2.5 Flash
-- Multi-Agent Workflow
-- MCP Integration
-- Streamlit UI
-- Role-Based Security
-- Report Persistence
+* Reading operational emails
+* Extracting action items
+* Prioritizing tasks
+* Preparing status reports
 
-## Run
+This project automates the workflow using specialized AI agents.
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
+---
 
 ## Architecture
-
-The system uses a multi-agent workflow powered by Gemini AI.
 
 ![System Architecture](diagrams/system_architecture.png)
 
 ### Workflow
 
-1. User submits business email
-2. Coordinator Agent manages workflow
-3. Email Agent extracts information
-4. Task Agent prioritizes work
-5. Report Agent generates report
-6. File Tools save reports
-7. MCP Server exposes report access tools
+1. User submits a business email through Streamlit.
+2. Coordinator Agent orchestrates the workflow.
+3. Email Agent extracts:
+
+   * Summary
+   * Action Items
+   * Deadlines
+4. Task Agent prioritizes tasks.
+5. Report Agent generates a business report.
+6. Reports are stored using File Tools.
+7. MCP Server exposes report-access tools.
+
+---
+
+## Features
+
+* Multi-Agent Workflow
+* Gemini 2.5 Flash Integration
+* Structured JSON Agent Communication
+* MCP Server Integration
+* Report Persistence
+* Streamlit User Interface
+* Role-Based Security Controls
+
+---
+
+## Technology Stack
+
+* Python
+* Google Gemini 2.5 Flash
+* Streamlit
+* MCP (Model Context Protocol)
+* Git & GitHub
+
+---
 
 ## Screenshots
 
@@ -63,4 +71,52 @@ The system uses a multi-agent workflow powered by Gemini AI.
 
 ### Generated Report
 
-![Generated Report](screenshots/report_output.png)
+![Generated Report](screenshots/report.png)
+
+---
+
+## Project Structure
+
+```text
+agents/
+tools/
+security/
+mcp_server/
+reports/
+docs/
+screenshots/
+
+app.py
+config.py
+requirements.txt
+README.md
+```
+
+---
+
+## Installation
+
+```bash
+git clone <repository-url>
+cd business-operations-multi-agent
+
+pip install -r requirements.txt
+```
+
+---
+
+## Run Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Future Enhancements
+
+* Real-time dashboard monitoring
+* Additional MCP tools
+* Multi-user authentication
+* Cloud deployment
+* Business analytics dashboard
